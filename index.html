@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>New Sudoku Project</title>
+        <link href="style.css" rel="stylesheet" />
+        <script src="sudoku.js"></script>
+    </head>
+    <body>
+        <div id="SudokuContainer">
+            <table class="Sudoku">
+            </table>    
+        </div> 
+        <div id="ButtonContainer">
+            <p></p>
+            <button onclick="generateGrid()">Generate Grid</button>
+            <button onclick="uploadSudoku()">Upload Sudoku</button>
+            <button onclick="populateCells(globalSudoku)">Populate Cells</button>
+            <br>
+            <button onclick="processRows(globalSudoku)">Process Rows</button>
+            <button onclick="processCols(globalSudoku)">Process Cols</button>
+            <button onclick="processSqus(globalSudoku)">Process Squs</button>
+            <br>
+            <button onclick="clearLog()">Clear Log</button>
+            <button onclick="countPossibilities(globalSudoku)">Count Possibilities</button>
+            <button onclick="countKnowns(globalSudoku)">Count Knowns</button>
+            <br> 
+            <br>
+            <button onclick="populateCell()">DEBUG - Populate Cell</button>
+            <button onclick="log('test')">DEBUG - Test Log</button>
+            <button onclick="removePossibilities(possibilitesTest4, possibilitesTest3)">DEBUG - Remove</button>
+            <p></p>
+        </div>
+        <div id="Console">
+            <p>CONSOLE:</p>
+            <p id="Log">
+            </p>
+        </div>  
+    </body>
+</html>

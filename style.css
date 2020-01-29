@@ -1,0 +1,75 @@
+body {
+    display: inline-block;
+}
+
+table {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+table.Sudoku { 
+    border: solid;
+    border-width: 1px;
+    font-family: Courier, sans-serif; 
+    height: 650px;
+    width: 600px;
+    text-align: center;
+    background-color: gray;
+}
+
+table.Square {
+    border: none;
+    text-align: center;
+}
+
+td.Cell {
+    border: solid;
+    width: 63px;
+    height: 63px;
+    border-width: 1px;
+    font-size: 51px;
+    text-align: center;
+    background-color: white;
+}
+
+td.CellPossibility {
+    font-size: 13px;
+    background-color: white;
+} 
+
+button {
+    display: inline;
+    width: 32.75%;
+    color: white;
+    background-color: gray;
+}
+
+h5 {
+    text-align: center; 
+}
+
+p { 
+    margin: 2.5%;
+}
+
+#ButonContainer {
+    align-items: center;
+    justify-content: center;
+}
+
+#Console {
+    border: solid;
+    border-width: 1px;
+    color: white;
+    background-color: gray;
+    font-size: 12px;
+}
+
+#SudokuContainer {
+    height: 650px;
+    width: 600px; 
+    background-color: gray;
+}
