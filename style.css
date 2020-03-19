@@ -56,13 +56,17 @@ td.CellPossibility {
 } 
 
 button {
+    margin-top: 2px;
+    margin-bottom: 2px;
     display: inline;
     width: 197px;
     max-width: 197px;
     font-size: 13px;
     font-family: Courier, sans-serif; 
-    color: white;
-    background-color: rgb(220, 220, 220);
+    /* color: white;
+    background-color: rgb(220, 220, 220); */
+    background-color: white;
+    color: black;
     border: none;
 }
 
@@ -96,12 +100,12 @@ p {
 
 #Console {
     margin-top: 0;
-    color: white;
-    background-color: rgb(180, 180, 180);
+    background-color: white;
+    color: black;
     font-size: 12px;
     font-family: Courier, sans-serif; 
-    height: 373px;
-    max-height: 373px;
+    height: 366px;
+    max-height: 366px;
 }
 
 #SudokuContainer {
@@ -113,16 +117,18 @@ p {
 #ButtonContainer {
     height: 650px;
     width: 600px; 
+    margin-left: 5px;
     background-color: rgb(180, 180, 180);
 }
 
 #Log {
     margin-left: 1%;
     margin-bottom: 1%;
-    background-color: rgb(180, 180, 180);
+    background-color: white;
+    color: black;
     overflow-y: overlay;
     scroll-behavior: smooth;
-    max-height: 345px;
+    max-height: 343px;
 }
 
 #SudokuStatsOveral {
@@ -200,4 +206,9 @@ p {
     font-size: 20px; 
     margin: 0;
     width: 100%;
+}
+
+.knowndata {
+    background-color: white;
+    color: black;
 }
