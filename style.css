@@ -1,18 +1,22 @@
+/* Elements */
+
 body {
     display: inline-block;
 }
 
 table {
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
+    border: none;
+    padding: none;
+    margin: none;
+    /* height: 100%; */
     width: 100%;
     text-align: center;
 }
 
 table.Sudoku { 
-    border: solid;
-    border-width: 1px;
+    border: none;
+    padding: none;
+    margin: none;
     font-family: Courier, sans-serif; 
     height: 650px;
     width: 600px;
@@ -22,29 +26,54 @@ table.Sudoku {
 
 table.Square {
     border: none;
+    padding: none;
+    margin: none;
     text-align: center;
 }
 
 td.Cell {
-    border: solid;
+    border: none;
+    padding: none;
+    margin: none;
     width: 63px;
     height: 63px;
-    border-width: 1px;
-    font-size: 51px;
+    font-size: 50px;
     text-align: center;
+    font-family: Courier, sans-serif;
     background-color: white;
 }
 
 td.CellPossibility {
+    border: none;
+    padding: none;
+    margin: none;
+    width: 17px;
+    height: 17px;
     font-size: 13px;
+    text-align: center;
+    font-family: Courier, sans-serif;
     background-color: white;
 } 
 
 button {
     display: inline;
-    width: 32.75%;
+    width: 197px;
+    max-width: 197px;
+    font-size: 13px;
+    font-family: Courier, sans-serif; 
     color: white;
-    background-color: gray;
+    background-color: rgb(220, 220, 220);
+    border: none;
+}
+
+input {
+    display: inline;
+    width: 191px;
+    max-width: 191px;
+    font-size: 13px; 
+    font-family: Courier, sans-serif; 
+    justify-content: center;
+    text-align: center; 
 }
 
 h5 {
@@ -52,24 +81,123 @@ h5 {
 }
 
 p { 
-    margin: 2.5%;
+    margin: 0;
 }
 
+/* IDs */
+
 #ButonContainer {
+    display: inline-block;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    background-color: rgb(180, 180, 180);
 }
 
 #Console {
-    border: solid;
-    border-width: 1px;
+    margin-top: 0;
     color: white;
-    background-color: gray;
+    background-color: rgb(180, 180, 180);
     font-size: 12px;
+    font-family: Courier, sans-serif; 
+    height: 373px;
+    max-height: 373px;
 }
 
 #SudokuContainer {
     height: 650px;
     width: 600px; 
+    background-color: rgb(180, 180, 180);
+}
+
+#ButtonContainer {
+    height: 650px;
+    width: 600px; 
+    background-color: rgb(180, 180, 180);
+}
+
+#Log {
+    margin-left: 1%;
+    margin-bottom: 1%;
+    background-color: rgb(180, 180, 180);
+    overflow-y: overlay;
+    scroll-behavior: smooth;
+    max-height: 345px;
+}
+
+#SudokuStatsOveral {
+    width: 600px;
+    max-width: 600px;
+}
+
+#SudokuStatsNumbersHeader {
+    color: white;
     background-color: gray;
+    font-family: Courier, sans-serif; 
+    font-size: 11px;
+}
+
+#SudokuStatsNumbersData {
+    width: 600px;
+    max-width: 600px;
+    background-color: rgb(180, 180, 180);
+    border-color: grey;
+    border: 1px;
+    color: white;
+    padding: 0;
+}
+
+#SudokuStatsOverallHeader {
+    color: white;
+    background-color: gray;
+    font-family: Courier, sans-serif; 
+    font-size: 11px;
+}
+
+#SudokuStatsOverallData {
+    width: 600px;
+    max-width: 600px;
+    background-color: rgb(180, 180, 180);
+    color: white;
+    padding: 0;
+}
+
+#Everything {
+    display: inline-flex;
+    padding: 5px;
+    background-color: rgb(180, 180, 180);
+}
+
+#GridAndButtons {
+    display: inline-flex;
+}
+
+/* Classes */
+
+.SectionTitle {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: gray;
+    font-family: Courier, sans-serif; 
+    font-size: 20px; 
+    /* margin-bottom: 0.5%; 
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1%; */
+    width: 600px;
+    max-width: 600px;
+}
+
+.SectionTitleRight {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: gray;
+    font-family: Courier, sans-serif; 
+    font-size: 20px; 
+    margin: 0;
+    width: 100%;
 }

@@ -3,38 +3,76 @@
     <head>
         <meta charset="utf-8">
         <title>New Sudoku Project</title>
+        <link rel='icon' href='favicon.ico' type='image/x-icon' />
         <link href="style.css" rel="stylesheet" />
         <script src="sudoku.js"></script>
     </head>
-    <body>
-        <div id="SudokuContainer">
-            <table class="Sudoku">
-            </table>    
+    <body onload="generateGrid()">
+        <div id="Everything">
+            <div id="GridAndButtons">
+                <div id="SudokuContainer">
+                    <table class="Sudoku">
+                    </table>    
+                </div> 
+                <div id="ButtonContainer">
+                    <p></p>
+                    <p class = "SectionTitle">STATS</p>
+                    <table id="SudokuStatsOverall">
+                        <tr id="SudokuStatsOverallHeader">
+                            <th>Initial Known</th><th>Initial Possibilities</th><th>Current Known</th><th>Current Possibilities</th>
+                        </tr>
+                        <tr id="SudokuStatsOverallData">
+                            <td id="InitialKnown"> _ </td><td id="InitialPossibilities"> _ </td><td id="CurrentKnown"> _ </td><td id="CurrentPossibilities"> _ </td>
+                        </tr>
+                    </table>
+                    <table id="SudokuStatsNumbers">
+                        <tr id="SudokuStatsNumbersHeader">
+                            <th>Known 1s</th><th>Known 2s</th><th>Known 3s</th><th>Known 4s</th><th>Known 5s</th><th>Known 6s</th><th>Known 7s</th><th>Known 8s</th><th>Known 9s</th>
+                        </tr>
+                        <tr id="SudokuStatsNumbersData">
+                            <td id="Known1s"> _ </td><td id="Known2s"> _ </td><td id="Known3s"> _ </td><td id="Known4s"> _ </td><td id="Known5s"> _ </td><td id="Known6s"> _ </td><td id="Known7s"> _ </td><td id="Known8s"> _ </td><td id="Known9s"> _ </td>
+                        </tr>
+                    </table>
+                    <p class = "SectionTitle">SETUP</p>
+                    <button onclick="uploadSudoku()">Upload Sudoku</button>
+                    <button onclick="clearLog()">Clear Console</button>
+                    <p></p>
+                    <p class = "SectionTitle">PROCESS</p>
+                    <button onclick="rowsButton(globalSudoku)">Remove knowns in rows from possibilities</button>
+                    <button onclick="colsButton(globalSudoku)">Remove knowns in cols from possibilities</button>
+                    <button onclick="squsButton(globalSudoku)">Remove knowns in squs from possibilities</button>
+                    <br>
+                    <button onclick="rowsButton2(globalSudoku)">Any number in only one cell possibilities for row?</button>
+                    <button onclick="colsButton2(globalSudoku)">Any number in only one cell possibilities for col?</button>
+                    <button onclick="squsButton2(globalSudoku)">Any number in only one cell possibilities for squ?</button>
+                    <br>
+                    <button onclick="solveButton(globalSudoku)">Solve</button>
+                    <br> 
+                    <!-- <p class = "SectionTitle">DEBUG</p>
+                    <button onclick="consoleLogSudoku(globalSudoku)">Log Sudoku</button>
+                    <button onclick="highlightRow(globalSudoku)">HL Row</button>
+                    <button onclick="doesSquContainKnown(globalSudoku)">Does squ contain?</button>
+                    <br> 
+                    <button onclick="clearHighlighting(globalSudoku)">Clear HL</button>
+                    <button onclick="highlightRowsWith(globalSudoku, 1)">HL Rows With</button>
+                    <button onclick="highlightColsWith(globalSudoku, 1)">HL Cols With</button>
+                    <p class = "SectionTitle">GUESS</p>
+                    <button> Row </button>
+                    <button> Col </button>
+                    <button> Guess </button>
+                    <br>
+                    <input type="number" id="rowGuess" name="rowGuess">
+                    <input type="number" id="colGuess" name="colGuess">
+                    <input type="number" id="valueGuess" name="valueGuess">
+                    <p></p> -->
+                    <div id="Console">
+                        <p class = "SectionTitleRight">CONSOLE</p>
+                        <p id="Log">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div> 
-        <div id="ButtonContainer">
-            <p></p>
-            <button onclick="generateGrid()">Generate Grid</button>
-            <button onclick="uploadSudoku()">Upload Sudoku</button>
-            <button onclick="populateCells(globalSudoku)">Populate Cells</button>
-            <br>
-            <button onclick="processRows(globalSudoku)">Process Rows</button>
-            <button onclick="processCols(globalSudoku)">Process Cols</button>
-            <button onclick="processSqus(globalSudoku)">Process Squs</button>
-            <br>
-            <button onclick="clearLog()">Clear Log</button>
-            <button onclick="countPossibilities(globalSudoku)">Count Possibilities</button>
-            <button onclick="countKnowns(globalSudoku)">Count Knowns</button>
-            <br> 
-            <br>
-            <button onclick="populateCell()">DEBUG - Populate Cell</button>
-            <button onclick="log('test')">DEBUG - Test Log</button>
-            <button onclick="removePossibilities(possibilitesTest4, possibilitesTest3)">DEBUG - Remove</button>
-            <p></p>
-        </div>
-        <div id="Console">
-            <p>CONSOLE:</p>
-            <p id="Log">
-            </p>
-        </div>  
     </body>
 </html>
