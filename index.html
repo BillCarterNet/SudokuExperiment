@@ -34,8 +34,13 @@
                         </tr>
                     </table>
                     <p class = "SectionTitle">SETUP</p>
-                    <button onclick="uploadSudoku()">Upload Sudoku</button>
+                    <button 
+                        title="Please see the Example Upload File for more info on file format" 
+                        onclick="uploadSudoku()">
+                            Upload Sudoku
+                    </button>
                     <button onclick="clearLog()">Clear Console</button>
+                    <button onclick="exampleButton()">Example Upload File</button>
                     <p></p>
                     <p class = "SectionTitle">PROCESS</p>
                     <button onclick="rowsButton(globalSudoku)">Remove knowns in rows from possibilities</button>

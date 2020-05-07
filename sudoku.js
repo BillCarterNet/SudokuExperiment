@@ -1000,6 +1000,26 @@ function squsButton2(sudoku) {
 
 }
 
+function exampleButton() {
+
+    var text = 'Example Sudoku Upload File:\n\n';
+    text += '[+] Please ensure the file is a text file\n';
+    text += '[+] Please ensure the unknown cells are represent by a capital X\n';
+    text += '[+] Please ensure their are no additional spaces or lines in the file\n\n';
+    text += 'So the file should look something like this\n\n';
+    text += 'XXXXXX68X\n';
+    text += 'XXXX73XX9\n';
+    text += '3X9XXXX45\n';
+    text += '49XXXXXXX\n';
+    text += '8X3X5X9X2\n';
+    text += 'XXXXXXX36\n';
+    text += '96XXXX3X8\n';
+    text += '7XX68XXXX\n';
+    text += 'X28XXXXXX\n';       
+    alert(text);
+
+}
+
 
 
 
