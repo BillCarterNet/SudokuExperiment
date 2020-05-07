@@ -371,7 +371,6 @@ function isKValidGuess(sudoku, rowOfGuess, colOfGuess, valueOfGuess) {
             // Does it contain the guess?
             if (sudoku[propertyName][0] === [valueOfGuess.toString()][0]) {
                 // Return false that the guess is invalid
-                // console.log("Guess is already in row");
                 return false;
             }
         }
@@ -1000,28 +999,81 @@ function squsButton2(sudoku) {
 
 }
 
-function exampleButton() {
+function promptWindow() {
 
-    var text = 'Example Sudoku Upload File:\n\n';
-    text += '[+] Please ensure the file is a text file\n';
-    text += '[+] Please ensure the unknown cells are represent by a capital X\n';
-    text += '[+] Please ensure their are no additional spaces or lines in the file\n\n';
-    text += 'So the file should look something like this\n\n';
-    text += 'XXXXXX68X\n';
-    text += 'XXXX73XX9\n';
-    text += '3X9XXXX45\n';
-    text += '49XXXXXXX\n';
-    text += '8X3X5X9X2\n';
-    text += 'XXXXXXX36\n';
-    text += '96XXXX3X8\n';
-    text += '7XX68XXXX\n';
-    text += 'X28XXXXXX\n';       
-    alert(text);
+    // https://stackoverflow.com/questions/26962032/a-very-simple-alert-and-confirm-box-style-with-css
+
+    // Create template
+    var box = document.createElement("div");
+    box.setAttribute('id', 'MessageBox');
+
+    var buttonContainer = document.createElement("div");
+    buttonContainer.setAttribute('id', 'MessageBoxContainer');
+
+    var okButton = document.createElement("button");
+    okButton.innerHTML = "OK";
+    okButton.onclick = function() { document.body.removeChild(box) }
+    okButton.setAttribute('id', 'MessageBoxButton');
+    buttonContainer.appendChild(okButton);
+
+    var heading = document.createElement('h1');
+    heading.innerHTML = "Example Sudoku Upload File:";
+
+    var textOne = document.createElement('p');
+    textOne.setAttribute('id', 'MessageBoxTextOne');
+
+    var content = "<ul><br>";
+    content += '<li>Please ensure the file is a text file</li><br>';
+    content += '<li>Please ensure the unknown cells are represented by a capital X</li><br>';
+    content += '<li>Please ensure there are no additional spaces or lines in the file</li><br>';
+    content += '</ul>'
+    textOne.innerHTML = content;
+
+    var textTwo = document.createElement('p');
+    textTwo.setAttribute('id', 'MessageBoxTextTwo');
+
+    content = "<br>"
+    content += 'So the file should look something like this<br><br>';
+    content += 'XXXXXX68X<br>';
+    content += 'XXXX73XX9<br>';
+    content += '3X9XXXX45<br>';
+    content += '49XXXXXXX<br>';
+    content += '8X3X5X9X2<br>';
+    content += 'XXXXXXX36<br>';
+    content += '96XXXX3X8<br>';
+    content += '7XX68XXXX<br>';
+    content += 'X28XXXXXX<br><br>';    
+    textTwo.innerHTML = content;
+
+    box.appendChild(heading);
+    box.appendChild(textOne);
+    box.appendChild(textTwo);
+    box.appendChild(buttonContainer);
+  
+    // Append box to body
+    document.body.appendChild(box);
+  
+}
+
+function example1() {
+
+    globalSudoku = {"squ1row1col1":["1","2","3","4","5","6","7","8","9"],"squ1row1col2":["1","2","3","4","5","6","7","8","9"],"squ1row1col3":["1","2","3","4","5","6","7","8","9"],"squ1row2col1":["6"],"squ1row2col2":["8"],"squ1row2col3":["1","2","3","4","5","6","7","8","9"],"squ1row3col1":["1"],"squ1row3col2":["9"],"squ1row3col3":["1","2","3","4","5","6","7","8","9"],"squ2row1col4":["2"],"squ2row1col5":["6"],"squ2row1col6":["1","2","3","4","5","6","7","8","9"],"squ2row2col4":["1","2","3","4","5","6","7","8","9"],"squ2row2col5":["7"],"squ2row2col6":["1","2","3","4","5","6","7","8","9"],"squ2row3col4":["1","2","3","4","5","6","7","8","9"],"squ2row3col5":["1","2","3","4","5","6","7","8","9"],"squ2row3col6":["4"],"squ3row1col7":["7"],"squ3row1col8":["1","2","3","4","5","6","7","8","9"],"squ3row1col9":["1"],"squ3row2col7":["1","2","3","4","5","6","7","8","9"],"squ3row2col8":["9"],"squ3row2col9":["1","2","3","4","5","6","7","8","9"],"squ3row3col7":["5"],"squ3row3col8":["1","2","3","4","5","6","7","8","9"],"squ3row3col9":["1","2","3","4","5","6","7","8","9"],"squ4row4col1":["8"],"squ4row4col2":["2"],"squ4row4col3":["1","2","3","4","5","6","7","8","9"],"squ4row5col1":["1","2","3","4","5","6","7","8","9"],"squ4row5col2":["1","2","3","4","5","6","7","8","9"],"squ4row5col3":["4"],"squ4row6col1":["1","2","3","4","5","6","7","8","9"],"squ4row6col2":["5"],"squ4row6col3":["1","2","3","4","5","6","7","8","9"],"squ5row4col4":["1"],"squ5row4col5":["1","2","3","4","5","6","7","8","9"],"squ5row4col6":["1","2","3","4","5","6","7","8","9"],"squ5row5col4":["6"],"squ5row5col5":["1","2","3","4","5","6","7","8","9"],"squ5row5col6":["2"],"squ5row6col4":["1","2","3","4","5","6","7","8","9"],"squ5row6col5":["1","2","3","4","5","6","7","8","9"],"squ5row6col6":["3"],"squ6row4col7":["1","2","3","4","5","6","7","8","9"],"squ6row4col8":["4"],"squ6row4col9":["1","2","3","4","5","6","7","8","9"],"squ6row5col7":["9"],"squ6row5col8":["1","2","3","4","5","6","7","8","9"],"squ6row5col9":["1","2","3","4","5","6","7","8","9"],"squ6row6col7":["1","2","3","4","5","6","7","8","9"],"squ6row6col8":["2"],"squ6row6col9":["8"],"squ7row7col1":["1","2","3","4","5","6","7","8","9"],"squ7row7col2":["1","2","3","4","5","6","7","8","9"],"squ7row7col3":["9"],"squ7row8col1":["1","2","3","4","5","6","7","8","9"],"squ7row8col2":["4"],"squ7row8col3":["1","2","3","4","5","6","7","8","9"],"squ7row9col1":["7"],"squ7row9col2":["1","2","3","4","5","6","7","8","9"],"squ7row9col3":["3"],"squ8row7col4":["3"],"squ8row7col5":["1","2","3","4","5","6","7","8","9"],"squ8row7col6":["1","2","3","4","5","6","7","8","9"],"squ8row8col4":["1","2","3","4","5","6","7","8","9"],"squ8row8col5":["5"],"squ8row8col6":["1","2","3","4","5","6","7","8","9"],"squ8row9col4":["1","2","3","4","5","6","7","8","9"],"squ8row9col5":["1"],"squ8row9col6":["8"],"squ9row7col7":["1","2","3","4","5","6","7","8","9"],"squ9row7col8":["7"],"squ9row7col9":["4"],"squ9row8col7":["1","2","3","4","5","6","7","8","9"],"squ9row8col8":["3"],"squ9row8col9":["6"],"squ9row9col7":["1","2","3","4","5","6","7","8","9"],"squ9row9col8":["1","2","3","4","5","6","7","8","9"],"squ9row9col9":["1","2","3","4","5","6","7","8","9"],"initialKnown":36,"initialPossibilities":405};
+    populateCells(globalSudoku);
 
 }
 
+function example2() {
 
+    globalSudoku = {"squ1row1col1":["1"],"squ1row1col2":["1","2","3","4","5","6","7","8","9"],"squ1row1col3":["1","2","3","4","5","6","7","8","9"],"squ1row2col1":["7"],"squ1row2col2":["3"],"squ1row2col3":["1","2","3","4","5","6","7","8","9"],"squ1row3col1":["1","2","3","4","5","6","7","8","9"],"squ1row3col2":["1","2","3","4","5","6","7","8","9"],"squ1row3col3":["1","2","3","4","5","6","7","8","9"],"squ2row1col4":["4"],"squ2row1col5":["8"],"squ2row1col6":["9"],"squ2row2col4":["1","2","3","4","5","6","7","8","9"],"squ2row2col5":["1","2","3","4","5","6","7","8","9"],"squ2row2col6":["1","2","3","4","5","6","7","8","9"],"squ2row3col4":["1","2","3","4","5","6","7","8","9"],"squ2row3col5":["1","2","3","4","5","6","7","8","9"],"squ2row3col6":["1"],"squ3row1col7":["1","2","3","4","5","6","7","8","9"],"squ3row1col8":["1","2","3","4","5","6","7","8","9"],"squ3row1col9":["6"],"squ3row2col7":["1","2","3","4","5","6","7","8","9"],"squ3row2col8":["4"],"squ3row2col9":["1","2","3","4","5","6","7","8","9"],"squ3row3col7":["2"],"squ3row3col8":["9"],"squ3row3col9":["5"],"squ4row4col1":["1","2","3","4","5","6","7","8","9"],"squ4row4col2":["1","2","3","4","5","6","7","8","9"],"squ4row4col3":["7"],"squ4row5col1":["5"],"squ4row5col2":["1","2","3","4","5","6","7","8","9"],"squ4row5col3":["1","2","3","4","5","6","7","8","9"],"squ4row6col1":["1","2","3","4","5","6","7","8","9"],"squ4row6col2":["1","2","3","4","5","6","7","8","9"],"squ4row6col3":["6"],"squ5row4col4":["1"],"squ5row4col5":["2"],"squ5row4col6":["1","2","3","4","5","6","7","8","9"],"squ5row5col4":["7"],"squ5row5col5":["1","2","3","4","5","6","7","8","9"],"squ5row5col6":["3"],"squ5row6col4":["1","2","3","4","5","6","7","8","9"],"squ5row6col5":["9"],"squ5row6col6":["5"],"squ6row4col7":["6"],"squ6row4col8":["1","2","3","4","5","6","7","8","9"],"squ6row4col9":["1","2","3","4","5","6","7","8","9"],"squ6row5col7":["1","2","3","4","5","6","7","8","9"],"squ6row5col8":["1","2","3","4","5","6","7","8","9"],"squ6row5col9":["8"],"squ6row6col7":["7"],"squ6row6col8":["1","2","3","4","5","6","7","8","9"],"squ6row6col9":["1","2","3","4","5","6","7","8","9"],"squ7row7col1":["9"],"squ7row7col2":["1"],"squ7row7col3":["4"],"squ7row8col1":["1","2","3","4","5","6","7","8","9"],"squ7row8col2":["2"],"squ7row8col3":["1","2","3","4","5","6","7","8","9"],"squ7row9col1":["8"],"squ7row9col2":["1","2","3","4","5","6","7","8","9"],"squ7row9col3":["1","2","3","4","5","6","7","8","9"],"squ8row7col4":["6"],"squ8row7col5":["1","2","3","4","5","6","7","8","9"],"squ8row7col6":["1","2","3","4","5","6","7","8","9"],"squ8row8col4":["1","2","3","4","5","6","7","8","9"],"squ8row8col5":["1","2","3","4","5","6","7","8","9"],"squ8row8col6":["1","2","3","4","5","6","7","8","9"],"squ8row9col4":["5"],"squ8row9col5":["1"],"squ8row9col6":["2"],"squ9row7col7":["1","2","3","4","5","6","7","8","9"],"squ9row7col8":["1","2","3","4","5","6","7","8","9"],"squ9row7col9":["1","2","3","4","5","6","7","8","9"],"squ9row8col7":["1","2","3","4","5","6","7","8","9"],"squ9row8col8":["3"],"squ9row8col9":["7"],"squ9row9col7":["1","2","3","4","5","6","7","8","9"],"squ9row9col8":["1","2","3","4","5","6","7","8","9"],"squ9row9col9":["4"],"initialKnown":36,"initialPossibilities":405};
+    populateCells(globalSudoku);
+}
 
+function example3() {
+
+    globalSudoku = {"squ1row1col1":["1","2","3","4","5","6","7","8","9"],"squ1row1col2":["1","2","3","4","5","6","7","8","9"],"squ1row1col3":["1","2","3","4","5","6","7","8","9"],"squ1row2col1":["1","2","3","4","5","6","7","8","9"],"squ1row2col2":["1","2","3","4","5","6","7","8","9"],"squ1row2col3":["1","2","3","4","5","6","7","8","9"],"squ1row3col1":["3"],"squ1row3col2":["1","2","3","4","5","6","7","8","9"],"squ1row3col3":["9"],"squ2row1col4":["1","2","3","4","5","6","7","8","9"],"squ2row1col5":["1","2","3","4","5","6","7","8","9"],"squ2row1col6":["1","2","3","4","5","6","7","8","9"],"squ2row2col4":["1","2","3","4","5","6","7","8","9"],"squ2row2col5":["7"],"squ2row2col6":["3"],"squ2row3col4":["1","2","3","4","5","6","7","8","9"],"squ2row3col5":["1","2","3","4","5","6","7","8","9"],"squ2row3col6":["1","2","3","4","5","6","7","8","9"],"squ3row1col7":["6"],"squ3row1col8":["8"],"squ3row1col9":["1","2","3","4","5","6","7","8","9"],"squ3row2col7":["1","2","3","4","5","6","7","8","9"],"squ3row2col8":["1","2","3","4","5","6","7","8","9"],"squ3row2col9":["9"],"squ3row3col7":["1","2","3","4","5","6","7","8","9"],"squ3row3col8":["4"],"squ3row3col9":["5"],"squ4row4col1":["4"],"squ4row4col2":["9"],"squ4row4col3":["1","2","3","4","5","6","7","8","9"],"squ4row5col1":["8"],"squ4row5col2":["1","2","3","4","5","6","7","8","9"],"squ4row5col3":["3"],"squ4row6col1":["1","2","3","4","5","6","7","8","9"],"squ4row6col2":["1","2","3","4","5","6","7","8","9"],"squ4row6col3":["1","2","3","4","5","6","7","8","9"],"squ5row4col4":["1","2","3","4","5","6","7","8","9"],"squ5row4col5":["1","2","3","4","5","6","7","8","9"],"squ5row4col6":["1","2","3","4","5","6","7","8","9"],"squ5row5col4":["1","2","3","4","5","6","7","8","9"],"squ5row5col5":["5"],"squ5row5col6":["1","2","3","4","5","6","7","8","9"],"squ5row6col4":["1","2","3","4","5","6","7","8","9"],"squ5row6col5":["1","2","3","4","5","6","7","8","9"],"squ5row6col6":["1","2","3","4","5","6","7","8","9"],"squ6row4col7":["1","2","3","4","5","6","7","8","9"],"squ6row4col8":["1","2","3","4","5","6","7","8","9"],"squ6row4col9":["1","2","3","4","5","6","7","8","9"],"squ6row5col7":["9"],"squ6row5col8":["1","2","3","4","5","6","7","8","9"],"squ6row5col9":["2"],"squ6row6col7":["1","2","3","4","5","6","7","8","9"],"squ6row6col8":["3"],"squ6row6col9":["6"],"squ7row7col1":["9"],"squ7row7col2":["6"],"squ7row7col3":["1","2","3","4","5","6","7","8","9"],"squ7row8col1":["7"],"squ7row8col2":["1","2","3","4","5","6","7","8","9"],"squ7row8col3":["1","2","3","4","5","6","7","8","9"],"squ7row9col1":["1","2","3","4","5","6","7","8","9"],"squ7row9col2":["2"],"squ7row9col3":["8"],"squ8row7col4":["1","2","3","4","5","6","7","8","9"],"squ8row7col5":["1","2","3","4","5","6","7","8","9"],"squ8row7col6":["1","2","3","4","5","6","7","8","9"],"squ8row8col4":["6"],"squ8row8col5":["8"],"squ8row8col6":["1","2","3","4","5","6","7","8","9"],"squ8row9col4":["1","2","3","4","5","6","7","8","9"],"squ8row9col5":["1","2","3","4","5","6","7","8","9"],"squ8row9col6":["1","2","3","4","5","6","7","8","9"],"squ9row7col7":["3"],"squ9row7col8":["1","2","3","4","5","6","7","8","9"],"squ9row7col9":["8"],"squ9row8col7":["1","2","3","4","5","6","7","8","9"],"squ9row8col8":["1","2","3","4","5","6","7","8","9"],"squ9row8col9":["1","2","3","4","5","6","7","8","9"],"squ9row9col7":["1","2","3","4","5","6","7","8","9"],"squ9row9col8":["1","2","3","4","5","6","7","8","9"],"squ9row9col9":["1","2","3","4","5","6","7","8","9"],"initialKnown":27,"initialPossibilities":486};
+    populateCells(globalSudoku);
+      
+}
 
 
 
@@ -1071,7 +1123,12 @@ function clearLog() {
  * output the given sudoku to the console log
  */
 function consoleLogSudoku(sudoku) {
+
     console.log(sudoku);
+    // Create JSON
+    var json = JSON.stringify(sudoku);
+    console.log(json);
+
 }
 
 

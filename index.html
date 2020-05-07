@@ -40,8 +40,12 @@
                             Upload Sudoku
                     </button>
                     <button onclick="clearLog()">Clear Console</button>
-                    <button onclick="exampleButton()">Example Upload File</button>
-                    <p></p>
+                    <button onclick="promptWindow()">Example Upload File</button>
+                    <br>
+                    <button onclick="example1()">Example 1</button>
+                    <button onclick="example2()">Example 2</button>
+                    <button onclick="example3()">Example 3</button>
+                    <br>
                     <p class = "SectionTitle">PROCESS</p>
                     <button onclick="rowsButton(globalSudoku)">Remove knowns in rows from possibilities</button>
                     <button onclick="colsButton(globalSudoku)">Remove knowns in cols from possibilities</button>
@@ -52,6 +56,7 @@
                     <button onclick="squsButton2(globalSudoku)">Any number in only one cell possibilities for squ?</button>
                     <br>
                     <button onclick="solveButton(globalSudoku)">Solve</button>
+                    <button onclick="consoleLogSudoku(globalSudoku)">Console log JSON</button>
                     <br> 
                     <!-- <p class = "SectionTitle">DEBUG</p>
                     <button onclick="consoleLogSudoku(globalSudoku)">Log Sudoku</button>

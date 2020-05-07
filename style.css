@@ -80,12 +80,29 @@ input {
     text-align: center; 
 }
 
+h1 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: gray;
+    font-family: Courier, sans-serif; 
+    font-size: 20px; 
+    margin: 3px;
+}
+
 h5 {
     text-align: center; 
 }
 
 p { 
     margin: 0;
+}
+
+ul {
+    margin-top: 0px;
+    margin-right: 13px;
+    margin-bottom: 0px;
 }
 
 /* IDs */
@@ -104,8 +121,8 @@ p {
     color: black;
     font-size: 12px;
     font-family: Courier, sans-serif; 
-    height: 366px;
-    max-height: 366px;
+    height: 344px;
+    max-height: 344x;
 }
 
 #SudokuContainer {
@@ -128,7 +145,7 @@ p {
     color: black;
     overflow-y: overlay;
     scroll-behavior: smooth;
-    max-height: 343px;
+    max-height: 320px;
 }
 
 #SudokuStatsOveral {
@@ -176,6 +193,41 @@ p {
 
 #GridAndButtons {
     display: inline-flex;
+}
+
+#MessageBox {
+    position: absolute;
+    width: 400px;
+    border: 5px solid gray;
+    background: rgb(180, 180, 180);
+    left: 400px;
+    top: 150px;
+}
+
+#MessageBoxTextOne {
+    font-size: 13px;
+    font-family: Courier, sans-serif;
+    background: white;
+    margin: 3px;
+}
+
+#MessageBoxTextTwo {
+    font-size: 13px;
+    font-family: Courier, sans-serif;
+    background: white;
+    margin: 3px;
+    text-align: center;
+}
+
+#MessageBoxButton {
+    width: 100px;
+    margin: 3px;
+    top: 50%;
+    left: 50%;
+}
+
+#MessageBoxContainer {
+    text-align: center;
 }
 
 /* Classes */
